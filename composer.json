@@ -35,6 +35,7 @@
     "config": {
         "sort-packages": true
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {"Dreamsbond\\Uuid\\Doctrine\\": "src/"}
     },
