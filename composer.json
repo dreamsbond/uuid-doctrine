@@ -1,0 +1,54 @@
+{
+    "name": "dreamsbond/uuid-doctrine",
+    "description": "Allow the use of a ramsey/uuid UUID as Doctrine field type.",
+    "type": "library",
+    "keywords": [
+        "uuid",
+        "identifier",
+        "guid",
+        "doctrine"
+    ],
+    "homepage": "https://github.com/dreamsbond/uuid-doctrine",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dreamsbond",
+            "email": "info@dreamsbond.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/dreamsbond/uuid-doctrine/issues",
+        "source": "https://github.com/dreamsbond/uuid-doctrine"
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "doctrine/dbal": "2.8.0",
+        "ramsey/uuid": "dev-master"
+    },
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "mockery/mockery": "^1.0",
+        "php-coveralls/php-coveralls": "^1.1 || ^2.1",
+        "phpunit/phpunit": "^7.0",
+        "squizlabs/php_codesniffer": "^3.3"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {"Dreamsbond\\Uuid\\Doctrine\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Dreamsbond\\Uuid\\Doctrine\\": "tests/"}
+    },
+    "scripts": {
+        "lint": "parallel-lint src tests",
+        "phpunit": "phpunit --verbose --colors=always",
+        "phpcs": "phpcs src tests --standard=psr12 -sp --colors --exclude=\"PSR2.ControlStructures.ControlStructureSpacing\"",
+        "test": [
+            "@lint",
+            "@phpunit",
+            "@phpcs"
+        ]
+    }
+}
